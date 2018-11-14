@@ -48,11 +48,12 @@
            var payload = CreateUser.querySelector('#payload').value
            var message_content = CreateUser.querySelector('#message_content').value
           var received_ts = CreateUser.querySelector('#received_ts').value
+          received_ts = received_ts == "" ? null : received_ts;
            payload_objects.push({id:payload,received_ts:received_ts,message_contents:message_content})
            console.log(payload_objects);
-           $('#payload').val("");
-           $('#message_content').val("");
-           $('#received_ts').val("");
+           $('#payload').val(null);
+           $('#message_content').val(null);
+           $('#received_ts').val(null);
          }
          $(document).ready(function(){
          $('#create_payload').on('submit', function(evt){
